@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Матрица</title>
+  <meta charset="utf-8">
+   <style>
+        body {
+            background: black;
+            margin: 0;
+            overflow: hidden;
+            color: #0f0;
+            font-family: monospace;
+        }
+        canvas {
+            display: block;
+        }
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 6s;
+            text-shadow: 0 0 10px #0f0;
+            pointer-events: none;
+            font-family: Georgia, serif;
+
+        }
+    </style>
+    <style type="text/css">
+    .dom {
+        text-decoration: none;
+        font-family: Georgia, serif;
+        font-size: 24px;
+
+
+    }
+    .dom a {
+color: #ff6600;
+}
+
+    </style>
+</head>
+
+<body>
+    <div  class="dom"><p style="text-align: center"><a href="https://nikanna.in" target="_self" title="На сайт">Вернуться на сайт</a></p></div>
+<div style=""><marquee width="100%" direction="left" height="30px">
+    <span style="font-size: 26px; font-family:'Georgia'";>Knock, knock, Neo...&nbsp;&nbsp;&nbsp;&nbsp; The Matrix has you...
+&nbsp;&nbsp;&nbsp;&nbsp;Follow the white rabbit.</span></marquee></div>
+
+ <div id="text">Мы все находимся в матрице...<br>Не надо ничего бояться...<br>Наша жизнь бесконечна...<br>Наша любовь вечна...<br><br>Николай и Анна</div>
+    <canvas id="matrix"></canvas>
+
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        const textElement = document.getElementById('text');
+
+        // Установка размера canvas
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Символы (кириллица + цифры)
+        const katakana = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const alphabet = katakana + latin + nums;
+
+        const fontSize = 16; //размер падающих букв
+        const columns = canvas.width / fontSize;
+        const rainDrops = [];
+
+        for (let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+
+        let animationId;
+        let isEnding = false;
+
+        function draw() {
+            if (isEnding) return;
+
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+
+        // Запуск анимации
+        function startMatrix() {
+            isEnding = false;
+            textElement.style.opacity = '0';
+            animationId = setInterval(draw, 30);
+
+            // Через 10 секунд показываем текст и останавливаем дождь
+            setTimeout(stopAndShowText, 8000);
+        }
+
+        function stopAndShowText() {
+            isEnding = true;
+            clearInterval(animationId);
+
+            // Плавное появление текста
+            textElement.style.opacity = '10';
+
+            // Через 5 секунд после появления текста перезапускаем всё
+            setTimeout(startMatrix, 5000);
+        }
+
+        startMatrix();
+    </script>
+
+</body>
+
+</html>

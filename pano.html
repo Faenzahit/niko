@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="generator" content="Poohmoon">
+	<title>Panorama</title>
+    <style type="text/css">
+     .button a {
+    background-color: 00438A;
+  /*  border-radius: 5px; */
+     border-color: #CFCFCF;
+    font-size: 20px;  color: #FFFFFF;
+
+    font-family: Georgia, serif ;
+}
+
+.button {
+    background-color: #00438A;
+  border-radius: 10px;
+ padding: 5px 15px;
+  border-width: 2px;
+     border-color: #CFCFCF;
+    font-size: 20px;  color: #FFFFFF;
+
+    font-family: Georgia, serif ;
+}
+
+ .button a:hover,
+.button a.current {
+   color: #FAB23D;
+    transition: color 0.3s ease; /* Плавное изменение цвета за 0.3 сек */
+    cursor: pointer;
+}
+    </style>
+
+    <script src="pano/Panorado_min-small.js"></script>
+        <script>
+            let viewer, imgList;
+
+            window.onload = function() {
+                imgList = [
+                    { src: 'pano/pano01.jpg', title: 'Capilla', projection: 'spherical', FontFace: '#FF6B6B',
+                      scale: -1, horzFov: 360,},
+                    { src: 'pano/pano02.jpg', title: 'Banco Popular', horzFov: 360, projection: 'spherical', scale: -1 },
+                     { src: 'pano/pano05.jpg', title: 'Restaurant El Meson', horzFov: 360, projection: 'spherical', scale: -1 },
+                         { src: 'pano/pano09.jpg', title: 'Residencial Costa del Sol', horzFov: 360, projection: 'spherical', scale: -1 },
+                          { src: 'pano/pano10.jpg', title: 'Colmado Blu', horzFov: 360, projection: 'spherical', scale: -1 },
+                           { src: 'pano/pano11.jpg', title: 'Море', horzFov: 360, projection: 'spherical', scale: -1 },
+
+
+                ];
+
+                viewer = new PanoradoJS(document.querySelector("#viewerCanvas"));
+                viewer.imageList = imgList;
+                viewer.selectImage(0);
+                viewer.onImageLoaded =
+                    function() { document.querySelector('#imageTitle').innerHTML = this.image.title; };
+
+            };
+        </script>
+</head>
+<body style=" background-color: #000000">
+<div class="textstyle1">
+ <p style="font-family: Georgia, serif; font-size: 24px;  color: #FFFFFF; text-align: center; " id="imageTitle">Загрузка</p>
+        <canvas id="viewerCanvas" style="width:100%;height:400px"></canvas></div><br>
+        <div style=" font-family: Georgia, serif; font-size: 20px;  color: #FFFFFF; text-align: center;">
+            Во всплывающем меню на картинке вы можете перелистывать панорамы при нажатии на квадратик со стрелочкой □ > (Next Image)
+        </div> <br>
+       <p style="text-align: center"> <button class=" button"><a href="https://nikanna.in/" target="_self">На главную</a></button> </p>
+         <!-- <p style="text-align: center "><button ><a href="./" target="_self"><span style="font-size: 26px">На главную страницу</span></a></button> </p> -->
+</body>
+</html>
