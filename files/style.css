@@ -1,0 +1,42 @@
+BODY {
+BORDER-TOP-WIDTH: 0px;
+BORDER-LEFT-WIDTH: 0px;
+BORDER-BOTTOM-WIDTH: 0px;
+FONT-FAMILY: Georgia, serif  ;
+FONT-SIZE: 18px;
+background-image: url(../fon/fonb.jpg);
+/*BACKGROUND-COLOR: #FFBD61;  */
+BORDER-RIGHT-WIDTH: 0px;
+/*scrollbar-3dlight-color: White;
+scrollbar-arrow-color: #FA9200;
+scrollbar-base-color: White;
+scrollbar-darkshadow-color: White;
+scrollbar-face-color: White;
+scrollbar-highlight-color: #FA9200;
+scrollbar-shadow-color: #FA9200;
+scrollbar-track-color: White;*/
+left: 0px;
+top: 0px;
+}
+
+
+
+TD {BORDER-RIGHT: #666666 0px solid;  BACKGROUND-COLOR: #FFFFFF; BORDER-TOP: #666666 0px solid; FONT-WEIGHT: 500; FONT-SIZE: 16px; BORDER-LEFT: #666666 0px solid; COLOR: #000000; BORDER-BOTTOM: #666666 0px solid; TEXT-DECORATION: none;  }
+IMG {BORDER-RIGHT:0px; BORDER-TOP:0px; BORDER-LEFT:0px; BORDER-BOTTOM:0px}
+
+A:link {COLOR:#E85C00; TEXT-DECORATION:none}
+A:visited {COLOR:#CC0000; TEXT-DECORATION:none}
+A:active {COLOR:#666666; TEXT-DECORATION:none}
+A:hover {COLOR:#666666; TEXT-DECORATION:none}
+
+
+H3 {font-weight : bold; font-size : 24px; font-family: Georgia, serif; TEXT-DECORATION: none; color: #000000;}
+input, textarea {font-family: Verdana; font-size: 16px; text-decoration: none; color: #000000; cursor: default; background-color: #FFFFFF; border-style: solid; border-width: 1px; border-color: #000000; }
+
+/* Здесь ниже задаётся стиль для ссылок - все ссылки в квадратиках обведённых нежным оттенком основного цвета */
+.pgbutt a {font-family: Verdana; padding-top:2px;padding-bottom:2px;
+text-decoration: none; border: 1px #FF0000 solid; background: #FFDDDD; padding:1px 4px 1px 4px; margin: 5px 1 0 0;
+ -moz-border-radius: 4px;
+ -khtml-border-radius: 4px;
+ -webkit-border-radius: 4px;
+ border-radius: 4px;}
