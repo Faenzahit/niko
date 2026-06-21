@@ -1,0 +1,144 @@
+﻿<html>
+<head>
+<META http-equiv=Content-Type content="text/html>
+<meta charset="utf-8">
+<title>Магический квадрат, который читает твои мысли</title>
+<link rel="canonical" href="https://nikanna.in/" >
+<meta name="keywords" content="Магический квадрат, сайт который читает мысли, сайт читает мысли, квадрат угадывает число">
+<meta name="description" content="Магический квадрат, сайт который читает мысли, сайт читает мысли, квадрат угадывает число">
+<meta name="author" content="Poohmoon" />
+<STYLE type=text/css>
+a {
+text-decoration: none;
+}
+
+h10 {
+    font-family: Georgia, serif;
+    size: 26px;
+    WIDTH: 300px;
+    FONT-FAMILY: georgia, serif;
+    border-radius: 10px;
+    padding: 10px;
+    BACKGROUND: #000000;
+    COLOR: #FFFFFF;
+
+}
+
+
+.num {
+FONT-SIZE: 13px; WIDTH: 30px; COLOR: #000; FONT-FAMILY: Georgia; TEXT-ALIGN: right
+}
+.symbols {
+FONT-SIZE: 20px; BACKGROUND: #000; COLOR: #f1f1f1; FONT-FAMILY: wingdings; TEXT-ALIGN: center
+}
+.viewsymbol {
+FONT-SIZE: 150px; BACKGROUND: #000; WIDTH: 150px; COLOR: #f1f1f1; FONT-FAMILY: wingdings; HEIGHT: 150px
+}
+
+
+</STYLE>
+
+
+<SCRIPT type="text/javascript" language="javascript">
+<!--//
+ax=0;
+function viewtable() {
+ax=Math.round(Math.random()*26);
+alphaArray=new Array("a", "n", "b", "d", "f", "h", "{", "i", "l", "v", "x", "z", "I", "J", "M", "N", "o", "O", "R", "S", "T", "U", "m", "6", "^", "u", "_", "[", "]");
+table="<table align=\"center\" border=\"0\" cellspacing=\"5\" cellpadding=\"1\">";
+j=1;
+for ( i = 99 ; i >= 0 ; i-- ) {
+a=Math.round(Math.random()*26);
+if(i%9 == 0 &&  i < 89)
+a=ax;
+table+="<td class=\"num\">"+i+"</td><td class=\"symbols\">"+alphaArray[a]+"</td>";
+if(j%10 == 0) table+="</tr><tr>"; j++;
+}
+table+="</table>";
+sym.innerHTML=table
+sh.innerHTML=""
+}
+function show() {
+sh.innerHTML=alphaArray[ax]
+
+sym.innerHTML="<center><br><br><br><h10><b>Квадрат угадал!</b></h10><br><br><br><br><br><br><a href=\"javascript:viewtable()\"><b><h10>ХОЧЕШЬ ПОВТОРИТЬ?</h10></a>";
+
+}
+
+//-->
+</SCRIPT>
+
+</head>
+<!--  -->
+
+
+<body  style=" background-color: #000000">
+
+
+<TABLE  align="center"  cellSpacing=1  width=800 > <!-- ширина всего квадрата -->
+
+<TR>
+<TD vAlign=top bgcolor="#F8C76B" ><font face="Arial" size="2" color="#800000">
+
+<table border="3" bordercolor="#000000" >
+  <tr>
+    <td width="80%">
+ <CENTER><b>  <font face="Georgia" size="5" color="#000000">Магический Квадрат</font></b><br></CENTER>
+ <br />
+<font face="Georgia" size="3em" color="#000000">
+<span style="line-height: 1.5">&nbsp;&nbsp;<b>1.</b> Задумай любое двухзначное число.<br></span>
+<span style="line-height: 1.5">&nbsp;&nbsp;<b>2.</b> Вычти из него составляющие его цифры,</span><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;(например, из числа 42 надо вычесть 4 и 2,
+ то получится 36).<br>
+<span style="line-height: 1.5">&nbsp;&nbsp;<b>3.</b> Найди это число в таблице и символ, которому оно соответствует.</span><br>
+<span style="line-height: 1.5">&nbsp;&nbsp;<b>4.</b> Мысленно вообрази себе этот символ перед глазами и щёлкни по<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; чёрному квадрату справа.</span> <br><br>
+
+    </td>
+    <td>
+ <br>
+<TABLE style="CURSOR: hand" onclick=show() cellSpacing=10 align=center border=0 >
+<TBODY style="width: 100%" >
+<TR>
+<TD class=viewsymbol id=sh align=middle> </TD>
+</TR>
+</TBODY>
+</TABLE>
+
+</TD>
+</TR>
+
+<TD id=sym vAlign=top height=300></TD>
+<td bgcolor="#F8C76B">
+
+        <font face="Georgia" size="3em" color="#000000">
+            <p align="center">Это просто магия!<br /><br>
+Чёрный квадрат<br /> может<br>запросто<br> прочитать<br> твои мысли!</p>
+  <br>
+<!--  -->
+  <!--  -->
+  <p align="center">
+  <button  style=" background-color: #D8DFF9;
+    border-radius: 8px;
+     border-color: #CFCFCF;
+    font-size: 16px;
+    font-family: Georgia, serif;
+     padding: 5px;">
+        <a href="https://nikanna.in/" target="_self">САЙТ</a></button>
+  </p>
+    <!--  -->
+
+</font>
+</td>
+ </table>
+</td>
+  </tr>
+</table>
+
+
+ </font>
+<SCRIPT type="text/javascript" language="javascript">
+<!--//
+viewtable();
+//-->
+</SCRIPT>
+</body>
+</html>
