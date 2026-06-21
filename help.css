@@ -1,0 +1,34 @@
+
+
+        .screen {
+            max-width: 600px;
+            font: 16px/140% 'Courier New', Courier, Arial;
+            padding: 20px;
+            background: black;/* transparent */
+            color: lime;  /* black */
+            white-space: pre-wrap;
+            padding: 10px; /* Поля вокруг текста */
+    border-radius: 15px; /* Уголки */
+        }
+        .screen span {
+            visibility: hidden;
+        }
+        .screen span.visible {
+            visibility: visible;
+        }
+        span.t {
+            min-width: 12px;
+            max-height: 24px;
+            display: inline-block;
+        }
+        .screen span.cursor {
+            background: lime; /* black */
+            animation: blinking 0.5s step-start infinite;
+        }
+
+        @keyframes blinking {
+            50% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+
+
